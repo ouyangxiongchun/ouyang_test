@@ -34,7 +34,7 @@
     lab.textAlignment = NSTextAlignmentCenter;
     lab.backgroundColor = [UIColor lightTextColor];
     lab.textColor = [UIColor blueColor];
-    lab.text = @"测试";
+    lab.text = @"测试 ";
     [self.view addSubview:lab];
     
 }
