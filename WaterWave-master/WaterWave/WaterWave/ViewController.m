@@ -24,6 +24,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _loadingView = [YDWaveLoadingView loadingView];
     [self.view addSubview:_loadingView];
+    
     _loadingView.center = self.view.center;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -34,7 +35,7 @@
     lab.textAlignment = NSTextAlignmentCenter;
     lab.backgroundColor = [UIColor lightTextColor];
     lab.textColor = [UIColor blueColor];
-    lab.text = @"测试";
+    lab.text = @"测试ba  ";
     [self.view addSubview:lab];
     
 }
