@@ -29,7 +29,7 @@
         [_loadingView startLoading];
     });
     
-    
+      
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 40)];
     lab.textAlignment = NSTextAlignmentCenter;
     lab.backgroundColor = [UIColor lightTextColor];
