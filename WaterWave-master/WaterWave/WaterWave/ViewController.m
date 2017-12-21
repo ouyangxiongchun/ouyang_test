@@ -28,7 +28,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_loadingView startLoading];
     });
-      
+        
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 40)];
     lab.textAlignment = NSTextAlignmentCenter;
     lab.backgroundColor = [UIColor lightTextColor];
