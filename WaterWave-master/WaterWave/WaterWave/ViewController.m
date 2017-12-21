@@ -41,6 +41,7 @@
 - (void)beginLoading:(id)sender
 {
     [_loadingView startLoading];
+    
 }
 
 - (void)didReceiveMemoryWarning {
