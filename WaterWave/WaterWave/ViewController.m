@@ -2,17 +2,13 @@
 //  ViewController.m
 //  WaterWave
 //
-//  Created by liangwei on 16/7/7.
-//  Copyright © 2016年 liangwei. All rights reserved.
+//  Created by oyxc on 2018/1/27.
+//  Copyright © 2018年 ouyangxiongchun. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "YDWaveLoadingView.h"
 
 @interface ViewController ()
-
-@property (nonatomic, strong) UIImageView *backImageView;
-@property (nonatomic, strong) YDWaveLoadingView *loadingView;
 
 @end
 
@@ -21,33 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    _loadingView = [YDWaveLoadingView loadingView];
-    [self.view addSubview:_loadingView];
-    _loadingView.center = self.view.center;
+    self.view.backgroundColor = [UIColor cyanColor];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [_loadingView startLoading];
-    });
-        
-    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 40)];
-    lab.textAlignment = NSTextAlignmentCenter;
-    lab.backgroundColor = [UIColor lightTextColor];
-    lab.textColor = [UIColor blueColor];
-    lab.text = @"测试";
-    [self.view addSubview:lab];
-    
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:50];
+    label.text = @"您好";
+    [self.view addSubview:label];
 }
 
-- (void)beginLoading:(id)sender
-{
-    [_loadingView startLoading];
-    
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
 
 @end
