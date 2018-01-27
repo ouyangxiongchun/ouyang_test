@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     _loadingView = [YDWaveLoadingView loadingView];
     [self.view addSubview:_loadingView];
