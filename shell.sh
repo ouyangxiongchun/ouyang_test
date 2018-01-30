@@ -46,8 +46,7 @@ build_path=${project_path}/build
 exportOptionsPlistPath=${project_path}/exportDebug.plist
 
 #导出.ipa文件所在路径
-output_path=/Users/hhly/Desktop
-exportIpaPath=${output_path}/${development_mode}
+exportIpaPath=${build_path}/${development_mode}
 
 
 #读取plist文件获取指定参数
