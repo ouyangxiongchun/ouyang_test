@@ -51,14 +51,14 @@ exportIpaPath=${output_path}/${development_mode}
 
 
 #读取plist文件获取指定参数
-appInfoPlistPath=${project_path}/${scheme_name}/info.plist
-echo'info--'${appInfoPlistPath}
+appInfoPlistPath=${project_path}/${scheme_name}/Info.plist
+echo 'info--'${appInfoPlistPath}
 bundleShortVersion=$(/usr/libexec/PlistBuddy -c "print CFBundleShortVersionString" ${appInfoPlistPath})
 bundleVersion=$(/usr/libexec/PlistBuddy -c "print CFBundleVersion" ${appInfoPlistPath})
 ipaFullName=iOS_V${bundleShortVersion}_${bundleVersion}_AppStore_$(date +"%Y%m%d")_$(date +"%H%M")_${pakege_mode}
 
 
-echo''
+echo ''
 echo '///-----------'
 echo '/// 正在清理工程'
 echo '///-----------'
@@ -77,7 +77,7 @@ archive -project ${project_path}/${project_name}.xcodeproj \
 -archivePath ${build_path}/${project_name}.xcarchive  -quiet  || exit
 
 
-echo''
+echo ''
 echo '///----------'
 echo '/// 开始ipa打包'${ipaFullName}
 echo '///----------'
