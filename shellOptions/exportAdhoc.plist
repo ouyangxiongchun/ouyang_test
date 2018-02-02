@@ -3,8 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>method</key>
-	<string>development</string>
+	<string>ad-hoc</string>
 	<key>compileBitcode</key>
 	<false/>
+	<key>uploadSymbols</key>
+	<true/>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>cp.yc.com</key>
+		<string>2ncai_pro_adhoc</string>
+	</dict>
 </dict>
 </plist>

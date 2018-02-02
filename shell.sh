@@ -47,34 +47,30 @@ development_mode=Debug
 #区分包名称而已
 pakege_mode=debug
 
+#plist文件所在路径
+exportOptionsPlistPath=${project_path}/shellOptions/exportDebug.plist
+
 #指定plist以及类型
 if [ $number == 0 ];then
 pakege_mode=release
 development_mode=Release
-exportOptionsPlistPath=${project_path}/exportAdhoc.plist
-elif [ $number == 1 ];then
-pakege_mode=release
-development_mode=Release
-exportOptionsPlistPath=${project_path}/exportAppstore.plist
+exportOptionsPlistPath=${project_path}/shellOptions/exportAdhoc.plist
+#exportOptionsPlistPath=${project_path}/exportAppstore.plist
 else
 pakege_mode=debug
 development_mode=Debug
-exportOptionsPlistPath=${project_path}/exportDebug.plist
+exportOptionsPlistPath=${project_path}/shellOptions/exportDebug.plist
 fi
-
+echo ${exportOptionsPlistPath}
 #build文件夹路径
 build_path=${project_path}/build
-
-#plist文件所在路径
-exportOptionsPlistPath=${project_path}/exportDebug.plist
 
 #导出.ipa文件所在路径
 exportIpaPath=${build_path}/${development_mode}
 
 
 #读取plist文件获取指定参数
-appInfoPlistPath=${project_path}/${scheme_name}/Info.plist
-echo 'info--'${appInfoPlistPath}
+appInfoPlistPath=${project_path}/${scheme_name}/info.plist
 bundleShortVersion=$(/usr/libexec/PlistBuddy -c "print CFBundleShortVersionString" ${appInfoPlistPath})
 bundleVersion=$(/usr/libexec/PlistBuddy -c "print CFBundleVersion" ${appInfoPlistPath})
 ipaFullName=iOS_V${bundleShortVersion}_${bundleVersion}_AppStore_$(date +"%Y%m%d")_$(date +"%H%M")_${pakege_mode}
