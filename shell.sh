@@ -3,7 +3,30 @@
 #计时
 SECONDS=0
 
-number=2
+number=0
+
+count="$#";
+echo 'count=' $count
+
+if [ $count == 0 ];then
+echo "Error! Should enter 0 or 1"
+echo "Place enter the number you want to export ? [ 0:ad-hoc 1:Debug] "
+echo "Please try again"
+exit 0
+fi
+
+echo "-- \$* 演示 ---"
+for i in "$*"; do
+number=$i
+done
+
+if [[ $number != 0 && $number != 1 ]];then
+echo "Error! Should enter 0 or 1"
+echo "Place enter the number you want to export ? [ 0:ad-hoc 1:Debug] "
+echo "Please try again"
+exit 0
+fi
+
 
 #工程名 将XXX替换成自己的工程名
 project_name=WaterWave
@@ -97,7 +120,7 @@ echo '///----------'
 if [ -e $exportIpaPath/$ipaFullName.ipa ]; then
 echo''
 echo '///----------'
-echo '/// ipa包已导出'
+echo '/// ipa包导出成功'
 echo '///----------'
 open $exportIpaPath
 else
@@ -111,16 +134,11 @@ fi
 #打包zip
 #zip -r olinone.ipa Payload
 
-#输出总用时
-echo "===Finished. Total time: ${SECONDS}s==="
-
-
-echo''
-echo '///-------------'
-echo '/// 任务完成'
-echo '///-------------'
 #通知
 osascript -e 'display notification "打包成功！" with title "任务完成"'
+
+#输出总用时
+echo "===Finished. Total time: ${SECONDS}s==="
 
 exit 0
 
