@@ -19,6 +19,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    //做个标记
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     _loadingView = [YDWaveLoadingView loadingView];
