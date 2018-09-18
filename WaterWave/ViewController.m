@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //oyxc3 test
-    
+    //oyxc2 testas
     
     self.view.backgroundColor = [UIColor cyanColor];
     
