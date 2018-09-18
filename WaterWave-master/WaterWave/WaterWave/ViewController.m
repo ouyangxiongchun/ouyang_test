@@ -19,10 +19,12 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    //做个标记
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     _loadingView = [YDWaveLoadingView loadingView];
     [self.view addSubview:_loadingView];
+    
     _loadingView.center = self.view.center;
     
     
@@ -36,7 +38,7 @@
     lab.textAlignment = NSTextAlignmentCenter;
     lab.backgroundColor = [UIColor lightTextColor];
     lab.textColor = [UIColor blueColor];
-    lab.text = @"测试";
+    lab.text = @"测试ba  ";
     [self.view addSubview:lab];
     
 }
